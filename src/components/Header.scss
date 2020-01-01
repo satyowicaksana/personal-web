@@ -1,3 +1,31 @@
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 40px;
+$max_font: 90px;
+
 @mixin canvas($bg-color) {
   height: 100vh;
   width: 100vw;
@@ -5,16 +33,42 @@
 }
 
 .header {
-  @include canvas(linear-gradient(to right, #6FB1FC, #4364F7, #0052D4));
-  color: white;
+  @include canvas(#EEEEEE);
+  .diagonal {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    clip-path: polygon(100% 0, 100% 37%, 100% 100%, 82% 65%, 100% 37%, 0 0);
+  }
   .container {
-    padding: 10% 15%;
+    position: relative;
+    padding: 10% 5%;
+    @media screen and (min-width: $min-width) {
+      padding: 70% 5%;
+    }
+    @media screen and (min-width: $max-width) {
+      padding: 15% 10%;
+    }
   }
   p {
     margin: 0
   }
   h1 {
-    margin: 0
+    margin: 0;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
   }
+  button {
+    box-shadow:
+      -12px -12px 12px 0 rgba(255, 255, 255, 1),
+      12px 12px 12px 0 rgba(0, 0, 0, .03);
+  }
+  // .box {
+  //   height: 30%;
+  //   width: 30%;
+  //   box-shadow:
+  //     -12px -12px 12px 0 rgb(255, 255, 255),
+  //     12px 12px 12px 0 rgba(0, 0, 0, .03);
+  // }
 }
 
