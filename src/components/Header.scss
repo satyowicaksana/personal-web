@@ -21,10 +21,10 @@
   }
 }
 
-$min_width: 320px;
-$max_width: 1200px;
-$min_font: 40px;
-$max_font: 90px;
+$min_width: 600px;
+$max_width: 1000px;
+$min_font: 30px;
+$max_font: 70px;
 
 @mixin canvas($bg-color) {
   height: 100vh;
@@ -33,23 +33,12 @@ $max_font: 90px;
 }
 
 .header {
-  @include canvas(#EEEEEE);
-  .diagonal {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
-    clip-path: polygon(100% 0, 100% 37%, 100% 100%, 82% 65%, 100% 37%, 0 0);
+  @include canvas(white);
+  .introduction {
+    padding: 15% 5%;
   }
-  .container {
-    position: relative;
-    padding: 10% 5%;
-    @media screen and (min-width: $min-width) {
-      padding: 70% 5%;
-    }
-    @media screen and (min-width: $max-width) {
-      padding: 15% 10%;
-    }
+  svg {
+    position: absolute;
   }
   p {
     margin: 0
@@ -58,17 +47,5 @@ $max_font: 90px;
     margin: 0;
     @include fluid-type($min_width, $max_width, $min_font, $max_font);
   }
-  button {
-    box-shadow:
-      -12px -12px 12px 0 rgba(255, 255, 255, 1),
-      12px 12px 12px 0 rgba(0, 0, 0, .03);
-  }
-  // .box {
-  //   height: 30%;
-  //   width: 30%;
-  //   box-shadow:
-  //     -12px -12px 12px 0 rgb(255, 255, 255),
-  //     12px 12px 12px 0 rgba(0, 0, 0, .03);
-  // }
 }
 
