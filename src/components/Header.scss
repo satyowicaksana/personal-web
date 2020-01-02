@@ -22,9 +22,9 @@
 }
 
 $min_width: 600px;
-$max_width: 1000px;
+$max_width: 1200px;
 $min_font: 30px;
-$max_font: 70px;
+$max_font: 60px;
 
 @mixin canvas($bg-color) {
   height: 100vh;
@@ -40,6 +40,10 @@ $max_font: 70px;
   .illustration {
     max-width: 40vw;
     margin-top: 5vh;
+    @media screen and (min-width: $min-width) {
+      width: 90vw;
+      margin-top: 5vh;  
+    }
   }
   svg {
     position: absolute;
