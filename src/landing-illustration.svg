@@ -6,8 +6,8 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    viewBox="0 0 666.66669 666.66669"
-   height="666.66669"
-   width="666.66669"
+   max-height="666.66669"
+   max-width="666.66669"
    xml:space="preserve"
    id="svg2"
    version="1.1"><metadata
