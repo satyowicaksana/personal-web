@@ -1,0 +1,28 @@
+@mixin absolute($top, $left) {
+  margin: 0;
+  position: absolute;
+  top: $top;
+  left: $left;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.home {
+  text-align: center;
+}
+.spinner {
+  height: 150px;
+  margin-top: calc(50vh - 75px);
+  animation: rotation 2s infinite linear;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

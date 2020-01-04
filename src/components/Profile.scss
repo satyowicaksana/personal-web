@@ -9,6 +9,15 @@ $screen-lg-min: 1200px;
   background: $bg-color;
 }
 
+@mixin absolute($top, $left) {
+  margin: 0;
+  position: absolute;
+  top: $top;
+  left: $left;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 @mixin colored-element() {
   color: white;
   background: $primary-color;
@@ -18,14 +27,29 @@ $screen-lg-min: 1200px;
 .profile {
   @include canvas(#E7E7E7);
   position: relative;
-  img {
+  padding-top: 20px;
+  .avatar {
+    @include absolute(20%, 70%);
+    z-index: 1;
+  }
+  .blob-md {
     margin: 0;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 10%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: 50vw;
+    width: 600px;
+    height: 100vh;
+  }
+  .blob-sm {
+    margin: 0;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 400px;
     height: 100vh;
   }
   .container {
@@ -35,9 +59,9 @@ $screen-lg-min: 1200px;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 100vh;
-    background-color: red;
+    width: 70vw;
+    height: 60vh;
+    border-radius: 30px;
   }
 }
 
