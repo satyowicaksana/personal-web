@@ -29,7 +29,7 @@ export default () => {
           <h1 style={styles.fadeInLeft} className="fade">Software Engineer.</h1>
         </div>
         <div style={styles.fadeInLeft}>
-        <Button style={{marginTop: '20px'}} type="primary" shape="round" size="large">
+        <Button className="button" style={{marginTop: '20px'}} type="primary" shape="round" size="large">
           Get to Know Me
         </Button>
         </div>

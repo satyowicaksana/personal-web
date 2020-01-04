@@ -29,16 +29,11 @@ $screen-lg-min: 1200px;
   position: relative;
   padding-top: 20px;
   .avatar {
-    @include absolute(20%, 70%);
+    @include absolute(0%, 70%);
     z-index: 1;
   }
   .blob-md {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    @include absolute(50%, 10%);
     width: 600px;
     height: 100vh;
   }
@@ -53,15 +48,21 @@ $screen-lg-min: 1200px;
     height: 100vh;
   }
   .container {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 70vw;
-    height: 60vh;
-    border-radius: 30px;
+    @include absolute(50%, 50%);
+    @media (max-width: $screen-sm-min) {
+      width: 95vw;
+      border-radius: 30px;
+    }
+    @media (min-width: $screen-sm-min) {
+      width: 90vw;
+      height: 60vh;
+      border-radius: 30px;
+    }
+    @media (min-width: $screen-md-min) {
+      width: 70vw;
+      height: 60vh;
+      border-radius: 30px;
+    }
   }
 }
 

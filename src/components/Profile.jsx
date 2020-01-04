@@ -1,6 +1,6 @@
 import React from 'react'
 import './Profile.scss'
-import { Avatar, Card, Row, Col, List } from 'antd'
+import { Avatar, Card, Row, Col, List, Button } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 
@@ -10,14 +10,16 @@ const data = [
     title: 'Hacktiv8',
     description: 'Fullstack Javascript Immersive Graduate',
     link: 'https://hacktiv8.com',
-    imageLink: 'https://hire.hacktiv8.com/verify/fsjs/SatyoWicaksana-20191219'
+    imageLink: 'https://hire.hacktiv8.com/verify/fsjs/SatyoWicaksana-20191219',
+    avatarLink: 'https://rec-data.kalibrr.com/www.kalibrr.ph/logos/LUJD7AZSJQB8A6XTF3ZXZYZ287EFXYAR9SH2LMPU-5d0b4f48.png'
   },
   {
     id: 'ui',
     title: 'University of Indonesia',
     description: 'Bachelor Degree of Information System',
     link: 'https://ui.ac.id',
-    imageLink: 'https://hire.hacktiv8.com/verify/fsjs/SatyoWicaksana-20191219'
+    imageLink: 'https://hire.hacktiv8.com/verify/fsjs/SatyoWicaksana-20191219',
+    avatarLink: 'https://motionsportindonesia.com/wp-content/uploads/2017/02/UI.jpg'
   }
 ];
 // const styles = {
@@ -39,11 +41,15 @@ export default () => {
       <img className="blob-sm" src={require('../blob-profile-2.svg')} alt="blob-profile"></img>
       <Card className="container">
         <Row>
-          <Col span={12}>
+          <Col className="about" xs={24} sm={24} md={12} lg={12} xl={12}>
             <h2>About me.</h2>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Hi, I'm Satyo. I'm a <b>fullstack javascript developer</b> based in Jakarta. I enjoy building websites and apps with modern and responsive user interface along with efficient backends.<br></br><br></br>
+            After graduating from <b>University of Indonesia</b>, I worked there as a java developer. In 2019, I joined <b>Hacktiv8</b>, a coding bootcamp, to improve my coding skills and knowledge and now I'm sure to build my career in the software engineering world.<br></br>
+            <Button className="button" style={{marginTop: '20px'}} type="primary" shape="round" size="large">
+              See Resume
+            </Button>
           </Col>
-          <Col span={12}>
+          <Col xs={24} sm={24} md={12} lg={12} xl={12}>
             <h2>Satyo Wicaksana</h2>
             <FontAwesomeIcon icon={faCalendarAlt} /><span> 19 August 1995</span><br></br>
             <FontAwesomeIcon icon={faMapMarkerAlt} /><span> Jakarta, Indonesia</span>
@@ -62,7 +68,7 @@ export default () => {
                     </a>
                   }>
                   <List.Item.Meta
-                    avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                    avatar={<Avatar size={50} src={item.avatarLink} />}
                     title={<a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a>}
                     description={item.description}
                   />
