@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header'
 import Profile from '../components/Profile'
+import Experience from '../components/Experience'
 import './Home.scss'
 
 export default () => {
@@ -22,6 +23,7 @@ export default () => {
     <div>
       <Header></Header>
       <Profile></Profile>
+      <Experience></Experience>
     </div>
   )
 }

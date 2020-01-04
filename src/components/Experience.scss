@@ -1,0 +1,7 @@
+@import '../variables';
+
+.experience {
+  @include canvas($primary-color);
+  position: relative;
+  color: white;
+}

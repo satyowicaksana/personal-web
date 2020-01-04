@@ -1,0 +1,25 @@
+$primary-color: #0B7BC5;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+@mixin canvas($bg-color) {
+  height: 100vh;
+  width: 100vw;
+  background: $bg-color;
+}
+
+@mixin absolute($top, $left) {
+  margin: 0;
+  position: absolute;
+  top: $top;
+  left: $left;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@mixin colored-element() {
+  color: white;
+  background: $primary-color;
+  border: none;
+}
