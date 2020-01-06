@@ -114,13 +114,13 @@ export default () => {
       </Tabs>
       <h2 style={{ marginTop: '20px' }}>Projects</h2> 
       <List
-        style={{ maxWidth: '900px', margin: 'auto' }}
+        style={{ maxWidth: '1000px', margin: 'auto' }}
         grid={{
           gutter: 15,
           xs: 1,
           sm: 2,
-          md: 4,
-          lg: 4,
+          md: 2,
+          lg: 2,
           xl: 3,
           xxl: 3,
         }}
@@ -130,7 +130,7 @@ export default () => {
             <a href={item.link} target="_blank" rel="noopener noreferrer">
               <Card style={{ background: '#92b9d4' }} className="project-card">
                 <Avatar src={require(`../${item.name}-logo.png`)} className="project-avatar" size={30} />
-                <h3 style={{ margin: 0 }}>{item.title}</h3>
+                <h3 style={{ margin: 0 }}><b>{item.title}</b></h3>
                 <p className="fade">{item.description}</p>
                 {/* <img style={{ width: '50%', borderRadius: '20px', marginBottom: '10px' }} src={require(`../${item.name}-thumbnail.png`)} alt={`${item.name}-thumbnail`}></img> */}
                 <img style={{ width: '100%', borderRadius: '20px', marginBottom: '10px' }} src={require(`../${item.name}-thumbnail.png`)} alt="a"></img>

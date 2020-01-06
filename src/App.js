@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './containers/Home'
 import './App.scss';
+import 'animate.css/animate.min.css'
 
 function App() {
   return (
