@@ -1,29 +1,95 @@
 import React from 'react'
 import './Experience.scss'
-import { Tabs, List, Card } from 'antd'
+import { Tabs, List, Card, Avatar } from 'antd'
 
 const { TabPane } = Tabs;
 
 const data = [
   {
-    title: 'Title 1',
+    name: 'vaultron',
+    title: 'Vaultron',
+    description: 'Password Manager web',
+    tools: [
+      'React.js',
+      'React Semantic UI',
+      'Express',
+      'Firebase'
+    ],
+    link: 'https://vaultron-pass.firebaseapp.com'
   },
   {
-    title: 'Title 2',
+    name: 'shield',
+    title: 'S.H.I.E.L.D. Database',
+    description: 'Superhero List (react exercise) web',
+    tools: [
+      'React.js',
+      'Material UI',
+      'Express',
+      'Firebase'
+    ],
+    link: 'https://shield-database.firebaseapp.com'
   },
   {
-    title: 'Title 3',
+    name: 'peregrine',
+    title: 'Peregrine',
+    description: 'Kanban (task manager) web',
+    tools: [
+      'Vue.js',
+      'Buefy',
+      'Express',
+      'Firebase'
+    ],
+    link: 'http://peregrine.satyowicaksana.online'
   },
   {
-    title: 'Title 4',
+    name: 'fakeoverflow',
+    title: 'Fake Overflow',
+    description: 'Stack Overflow clone web',
+    tools: [
+      'Vue.js',
+      'Buefy',
+      'Express',
+      'Mongoose'
+    ],
+    link: 'http://fakeoverflow.satyowicaksana.online'
   },
   {
-    title: 'Title 5',
+    name: 'omniverse',
+    title: 'Omniverse',
+    description: 'E-commerce web',
+    tools: [
+      'Vue.js',
+      'Vuetify',
+      'Express',
+      'Mongoose'
+    ],
+    link: 'http://omniverse.satyowicaksana.online'
   },
   {
-    title: 'Title 6',
+    name: 'spotlight',
+    title: 'Spotlight',
+    description: 'Article Posting web',
+    tools: [
+      'Vue.js',
+      'Buefy',
+      'Express',
+      'Mongoose'
+    ],
+    link: 'http://spotlight.satyowicaksana.com'
   },
-];
+  {
+    name: 'checkit',
+    title: 'Check.it',
+    description: 'Todo List web',
+    tools: [
+      'jQuery',
+      'Materialize',
+      'Express',
+      'Mongoose'
+    ],
+    link: 'http://checkit.satyowicaksana.com'
+  },
+]
 
 export default () => {
   return (
@@ -46,11 +112,11 @@ export default () => {
           </ul>
         </TabPane>
       </Tabs>
-      <h2>Projects</h2> 
+      <h2 style={{ marginTop: '20px' }}>Projects</h2> 
       <List
         style={{ maxWidth: '900px', margin: 'auto' }}
         grid={{
-          gutter: 10,
+          gutter: 15,
           xs: 1,
           sm: 2,
           md: 4,
@@ -58,10 +124,23 @@ export default () => {
           xl: 3,
           xxl: 3,
         }}
-        dataSource={data}
+        dataSource={data.reverse()}
         renderItem={item => (
           <List.Item>
-            <Card style={{ background: '#92b9d4', textAlign: 'left' }} title={item.title}>Card content</Card>
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
+              <Card style={{ background: '#92b9d4' }} className="project-card">
+                <Avatar src={require(`../${item.name}-logo.png`)} className="project-avatar" size={30} />
+                <h3 style={{ margin: 0 }}>{item.title}</h3>
+                <p className="fade">{item.description}</p>
+                {/* <img style={{ width: '50%', borderRadius: '20px', marginBottom: '10px' }} src={require(`../${item.name}-thumbnail.png`)} alt={`${item.name}-thumbnail`}></img> */}
+                <img style={{ width: '100%', borderRadius: '20px', marginBottom: '10px' }} src={require(`../${item.name}-thumbnail.png`)} alt="a"></img>
+                <ul>
+                  {item.tools.map(tool => (
+                    <li>{tool}</li>
+                  ))}
+                </ul>
+              </Card>
+            </a>
           </List.Item>
         )}
       />

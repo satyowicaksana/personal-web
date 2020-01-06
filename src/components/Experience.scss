@@ -10,4 +10,18 @@
   h2, h3, h4, li {
     color: white;
   }
+
+  .project-avatar {
+    @include absolute(2%, 5%)
+  }
+
+  .project-card {
+    opacity: 0.8;
+    background: '#92b9d4';
+    text-align: left;
+    border-radius: 15px;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
