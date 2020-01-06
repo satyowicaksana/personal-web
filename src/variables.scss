@@ -4,7 +4,7 @@ $screen-md-min: 992px;
 $screen-lg-min: 1200px;
 
 @mixin canvas($bg-color) {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background: $bg-color;
 }

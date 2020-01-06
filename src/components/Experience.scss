@@ -3,5 +3,11 @@
 .experience {
   @include canvas($primary-color);
   position: relative;
-  color: white;
+  color: white !important;
+  text-align: center;
+  padding: 20px;
+  
+  h2, h3, h4, li {
+    color: white;
+  }
 }

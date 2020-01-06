@@ -2,6 +2,7 @@ import React from 'react'
 import './Header.scss'
 import { Row, Col, Button } from 'antd';
 import { fadeInLeft, fadeInDown } from 'react-animations';
+import { Link } from 'react-scroll'
 import Radium, {StyleRoot} from 'radium';
 
 const styles = {
@@ -29,9 +30,11 @@ export default () => {
           <h1 style={styles.fadeInLeft} className="fade">Software Engineer.</h1>
         </div>
         <div style={styles.fadeInLeft}>
-        <Button className="button" style={{marginTop: '20px'}} type="primary" shape="round" size="large">
-          Get to Know Me
-        </Button>
+        <Link to="profile" smooth={true} duration={500}>
+          <Button className="button" style={{marginTop: '20px'}} type="primary" shape="round" size="large">
+            Get to Know Me
+          </Button>
+        </Link>
         </div>
         </Col>
         <Col xs={24} sm={24} md={24} lg={12} xl={12} style={{textAlign: 'center'}}>

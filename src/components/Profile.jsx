@@ -35,7 +35,7 @@ const data = [
 
 export default () => {
   return (
-    <div className="profile">
+    <div name="profile" className="profile">
       <Avatar className="avatar" src={require('../avatar.jpg')} />
       <img className="blob-md" src={require('../blob-profile-1.svg')} alt="blob-profile"></img>
       <img className="blob-sm" src={require('../blob-profile-2.svg')} alt="blob-profile"></img>
