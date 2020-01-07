@@ -1,6 +1,7 @@
 import React from 'react'
 import './Experience.scss'
 import { Tabs, List, Card, Avatar } from 'antd'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 const { TabPane } = Tabs;
 
@@ -94,25 +95,27 @@ const data = [
 export default () => {
   return (
     <div className="experience">
-      <h2>Work</h2>
-      <Tabs tabPosition="top" type="card" style={{ maxWidth: '900px', margin: 'auto' }}>
-        <TabPane style={{ textAlign: 'left' }}  tab="Pusilkom UI - Consulting" key="1">
-          <h3>IT Consultant @ Pusilkom UI</h3>
-          <h4 className="fade">Oct 2018 - Jul 2019</h4>
-          <ul>
-            <li>Produced IT Master Plan document for Badak LNG.</li>
-          </ul>
-        </TabPane>
-        <TabPane style={{ textAlign: 'left' }}  tab="Pusilkom UI - Development" key="2">
-          <h3>Software Engineer @ Pusilkom UI</h3>
-          <h4 className="fade">Aug 2017 - Oct 2018</h4>
-          <ul>
-            <li>Developed SILON, a web used by KPU (Komisi Pemilihan Umum) to record election vote data.</li>
-            <li>Trained SILON end-user to use the web.</li>
-          </ul>
-        </TabPane>
-      </Tabs>
-      <h2 style={{ marginTop: '20px' }}>Projects</h2> 
+      <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+        <h2>Work</h2>
+        <Tabs tabPosition="top" type="card" style={{ maxWidth: '900px', margin: 'auto' }}>
+          <TabPane style={{ textAlign: 'left' }}  tab="Pusilkom UI - Consulting" key="1">
+            <h3>IT Consultant @ Pusilkom UI</h3>
+            <h4 className="fade">Oct 2018 - Jul 2019</h4>
+            <ul>
+              <li>Produced IT Master Plan document for Badak LNG.</li>
+            </ul>
+          </TabPane>
+          <TabPane style={{ textAlign: 'left' }}  tab="Pusilkom UI - Development" key="2">
+            <h3>Software Engineer @ Pusilkom UI</h3>
+            <h4 className="fade">Aug 2017 - Oct 2018</h4>
+            <ul>
+              <li>Developed SILON, a web used by KPU (Komisi Pemilihan Umum) to record election vote data.</li>
+              <li>Trained SILON end-user to use the web.</li>
+            </ul>
+          </TabPane>
+        </Tabs>
+        <h2 style={{ marginTop: '20px' }}>Portfolios</h2> 
+      </ScrollAnimation>
       <List
         style={{ maxWidth: '1000px', margin: 'auto' }}
         grid={{
@@ -124,24 +127,29 @@ export default () => {
           xl: 3,
           xxl: 3,
         }}
-        dataSource={data.reverse()}
-        renderItem={item => (
-          <List.Item>
-            <a href={item.link} target="_blank" rel="noopener noreferrer">
-              <Card style={{ background: '#92b9d4' }} className="project-card">
-                <Avatar src={require(`../${item.name}-logo.png`)} className="project-avatar" size={30} />
-                <h3 style={{ margin: 0 }}><b>{item.title}</b></h3>
-                <p className="fade">{item.description}</p>
-                {/* <img style={{ width: '50%', borderRadius: '20px', marginBottom: '10px' }} src={require(`../${item.name}-thumbnail.png`)} alt={`${item.name}-thumbnail`}></img> */}
-                <img style={{ width: '100%', borderRadius: '20px', marginBottom: '10px' }} src={require(`../${item.name}-thumbnail.png`)} alt="a"></img>
-                <ul>
-                  {item.tools.map(tool => (
-                    <li>{tool}</li>
-                  ))}
-                </ul>
-              </Card>
-            </a>
-          </List.Item>
+        pagination={{
+          pageSize: 3
+        }}
+        dataSource={data}
+        renderItem={(item, i) => (
+          <ScrollAnimation animateIn="fadeIn" delay={i * 50}  animateOnce={true}>
+            <List.Item>
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                <Card style={{ background: '#92b9d4' }} className="project-card">
+                  <Avatar src={require(`../${item.name}-logo.png`)} className="project-avatar" size={30} />
+                  <h3 style={{ margin: 0 }}><b>{item.title}</b></h3>
+                  <p className="fade">{item.description}</p>
+                  {/* <img style={{ width: '50%', borderRadius: '20px', marginBottom: '10px' }} src={require(`../${item.name}-thumbnail.png`)} alt={`${item.name}-thumbnail`}></img> */}
+                  <img style={{ width: '100%', borderRadius: '20px', marginBottom: '10px' }} src={require(`../${item.name}-thumbnail.png`)} alt="a"></img>
+                  <ul>
+                    {item.tools.map(tool => (
+                      <li>{tool}</li>
+                    ))}
+                  </ul>
+                </Card>
+              </a>
+            </List.Item>
+          </ScrollAnimation>
         )}
       />
     </div>

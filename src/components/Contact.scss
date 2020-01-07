@@ -1,0 +1,11 @@
+@import '../variables';
+
+.contact {
+  @include canvas(white);
+  text-align: center;
+  padding: 5%;
+  .blob-contact {
+    left: 0;
+    width: 30vw;
+  }
+}

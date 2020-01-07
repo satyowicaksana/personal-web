@@ -16,6 +16,7 @@
   }
 
   .project-card {
+    @include elevate();
     border: none;
     opacity: 0.8;
     background: '#92b9d4';

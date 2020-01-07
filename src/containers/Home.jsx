@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header'
 import Profile from '../components/Profile'
 import Experience from '../components/Experience'
+import Contact from '../components/Contact'
 import './Home.scss'
 
 export default () => {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   
   useEffect(() => {
     setTimeout(() => {
@@ -24,6 +25,7 @@ export default () => {
       <Header></Header>
       <Profile></Profile>
       <Experience></Experience>
+      <Contact></Contact>
     </div>
   )
 }
