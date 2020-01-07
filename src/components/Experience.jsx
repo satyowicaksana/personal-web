@@ -132,18 +132,17 @@ export default () => {
         }}
         dataSource={data}
         renderItem={(item, i) => (
-          <ScrollAnimation animateIn="fadeIn" delay={i * 50}  animateOnce={true}>
+          <ScrollAnimation key={i + 'porto'} animateIn="fadeIn" delay={i * 50}  animateOnce={true}>
             <List.Item>
               <a href={item.link} target="_blank" rel="noopener noreferrer">
                 <Card style={{ background: '#92b9d4' }} className="project-card">
                   <Avatar src={require(`../${item.name}-logo.png`)} className="project-avatar" size={30} />
                   <h3 style={{ margin: 0 }}><b>{item.title}</b></h3>
                   <p className="fade">{item.description}</p>
-                  {/* <img style={{ width: '50%', borderRadius: '20px', marginBottom: '10px' }} src={require(`../${item.name}-thumbnail.png`)} alt={`${item.name}-thumbnail`}></img> */}
                   <img style={{ width: '100%', borderRadius: '20px', marginBottom: '10px' }} src={require(`../${item.name}-thumbnail.png`)} alt="a"></img>
                   <ul>
                     {item.tools.map(tool => (
-                      <li>{tool}</li>
+                      <li key={tool + item.name}>{tool}</li>
                     ))}
                   </ul>
                 </Card>
