@@ -26,4 +26,31 @@
       opacity: 1;
     }
   }
+
+  .vue-logo {
+    -webkit-animation: action 0.5s infinite  alternate;
+    animation: action 0.5s infinite  alternate;
+  }
+  @-webkit-keyframes action {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+  }
+  @keyframes action {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+  }
+
+  @-moz-keyframes spin {
+    to { -moz-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+      to { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes spin {
+      to {transform:rotate(360deg);}
+  }
+
+  .spin {
+      animation: spin 3000ms linear infinite;
+  }
 }

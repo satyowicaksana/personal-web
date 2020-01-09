@@ -1,6 +1,6 @@
 import React from 'react'
 import './Experience.scss'
-import { Tabs, List, Card, Avatar } from 'antd'
+import { Tabs, List, Card, Avatar, Row, Col, Divider } from 'antd'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 const { TabPane } = Tabs;
@@ -96,7 +96,9 @@ export default () => {
   return (
     <div className="experience">
       <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
-        <h2>Work</h2>
+        <div style={{ maxWidth: '900px', margin: 'auto' }}>
+          <Divider dashed><h3>Work</h3></Divider>
+        </div>
         <Tabs tabPosition="top" type="card" style={{ maxWidth: '900px', margin: 'auto' }}>
           <TabPane style={{ textAlign: 'left' }}  tab="Pusilkom UI - Consulting" key="1">
             <h3>IT Consultant @ Pusilkom UI</h3>
@@ -114,8 +116,22 @@ export default () => {
             </ul>
           </TabPane>
         </Tabs>
-        <h2 style={{ marginTop: '20px' }}>Portfolios</h2> 
+        <div style={{ maxWidth: '900px', margin: 'auto' }}>
+          <Divider dashed><h3>Portfolios</h3></Divider>
+        </div>
+        <Row style={{ width: '300px', margin: 'auto' }}>
+          <Col span={8}>
+            <img className="spin" src={require('../react-logo.png')} style={{ width: '40px'}} alt="react-logo"></img>
+          </Col>
+          <Col span={8}>
+          </Col>
+          <Col span={8}>
+          <img className="vue-logo" src={require('../vue-logo.png')} style={{ width: '40px'}} alt="vue-logo"></img>
+          </Col>
+        </Row>
+        
       </ScrollAnimation>
+      <br></br>
       <List
         style={{ maxWidth: '1000px', margin: 'auto' }}
         grid={{

@@ -1,6 +1,8 @@
 import React from 'react'
 import './Contact.scss'
-import { Button, Row, Col } from 'antd'
+import { Button, Row, Col, Popover } from 'antd'
+import { FaWhatsapp, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
 
 export default () => {
   return (
@@ -16,15 +18,35 @@ export default () => {
           <Button className="button" shape="round" size="large" type="primary">Get In Touch</Button>
         </a>
       </div>
-      <Row>
+      <Row style={{ marginTop: '30px' }}>
         <Col span={6}>
-        <a href="https://api.whatsapp.com/send?phone=628111828395">
-          +62-8111828395
-        </a>
+          <a href="https://api.whatsapp.com/send?phone=628111828395" target="_blank" rel="noopener noreferrer">
+            <Popover className="icon" content={<p>+62-8111828395</p>} trigger="hover">
+              <FaWhatsapp size={30} />
+            </Popover>
+          </a>
         </Col>
-        <Col span={6}>col-6</Col>
-        <Col span={6}>col-6</Col>
-        <Col span={6}>col-6</Col>
+        <Col span={6}>
+          <a href="mailto:satyowicaksana@gmail.com">
+            <Popover className="icon" content={<p>satyowicaksana@gmail.com</p>} trigger="hover">
+              <MdEmail size={30} />
+            </Popover>
+          </a>
+        </Col>
+        <Col span={6}>
+          <a href="https://www.github.com/satyowicaksana" target="_blank" rel="noopener noreferrer">
+            <Popover className="icon" content={<p>satyowicaksana@gmail.com</p>} trigger="hover">
+              <FaGithub size={30} />
+            </Popover>
+          </a>
+        </Col>
+        <Col span={6}>
+          <a href="https://www.linkedin.com/in/satyowicaksana" target="_blank" rel="noopener noreferrer">
+            <Popover className="icon" content={<p>linkedin.com/in/satyowicaksana</p>} trigger="hover">
+              <FaLinkedin size={30} />
+            </Popover>
+          </a>
+        </Col>
       </Row>
     </div>
     </>
