@@ -47,7 +47,7 @@ export default () => {
               <h2>About me.</h2>
               Hi, I'm Satyo. I'm a <b>fullstack javascript developer</b> based in Jakarta. I enjoy building websites and apps with modern and responsive user interface along with efficient backends.<br></br><br></br>
               After graduating from <b>University of Indonesia</b>, I worked there as a java developer. In 2019, I joined <b>Hacktiv8</b>, a coding bootcamp, to improve my coding skills and knowledge and now I'm sure to build my career in the software engineering world.<br></br>
-              <Button onClick={() => window.open('https://www.scribd.com/document/442205498/CV-Satyo-Wicaksana', '_blank')} className="button" style={{marginTop: '20px', marginBottom: '20px'}} type="primary" shape="round" size="large">
+              <Button onClick={() => window.open('https://www.scribd.com/document/442205498/CV-Satyo-Wicaksana?secret_password=SQWpzZ7ODq7qwR7G6SaM', '_blank')} className="button" style={{marginTop: '20px', marginBottom: '20px'}} type="primary" shape="round" size="large">
                 See Resume
               </Button>
             </Col>

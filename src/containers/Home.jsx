@@ -6,7 +6,7 @@ import Contact from '../components/Contact'
 import './Home.scss'
 
 export default () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   
   useEffect(() => {
     setTimeout(() => {
